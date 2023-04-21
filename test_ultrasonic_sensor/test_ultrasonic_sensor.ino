@@ -65,13 +65,14 @@ void loop() {
   }
   else{
     distance=x/50;
-    mqttClient.beginMessage(sujet);
-    mqttClient.print(1);
-    mqttClient.endMessage();
+    
    Serial.print(distance);
     Serial.println("cm");
     if (distance<15)
     {
+      mqttClient.beginMessage(sujet);
+    mqttClient.print("1");
+    mqttClient.endMessage();
       Serial.println("INTRU DÉTECTÉ");
        color = strip.Color(255, 0, 0);
       delay(200);
@@ -79,6 +80,9 @@ void loop() {
     
      else
      {
+       mqttClient.beginMessage(sujet);
+    mqttClient.print("0");
+    mqttClient.endMessage();
        Serial.println(" ");
         color = strip.Color(0, 0, 0);
      }
