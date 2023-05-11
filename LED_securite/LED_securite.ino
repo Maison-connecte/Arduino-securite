@@ -3,9 +3,7 @@
 #include <WiFiNINA.h>
 #include <Adafruit_NeoPixel.h>
 
-//SSID et mot de passe du réseau WiFi
-#define ssid "Externe"
-#define mdp "Education2523"
+
 
 //Broche qui envoie les données servant à contrôler la bande LED
 #define LED_PIN 6
@@ -14,8 +12,10 @@
 //Variable de la bande LED
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-char ssid[]=ssid;
-char pass[]=mdp;
+//SSID et mot de passe du réseau WiFi
+char ssid[]="Externe";
+char pass[]="Education2523";
+
 //Variable de connexion au WiFi
 WiFiClient wifiClient;
 //Variable de connexion au broker MQTT
