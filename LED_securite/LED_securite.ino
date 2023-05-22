@@ -1,7 +1,9 @@
 //Auteur: Dylan Lévesque
 //Date de création: 23 mars 2023
+//Date de dernière modification: 21 mai 2023
 //Description: Code permettant au microcontrôleur de communiquer avec un capteur à ultrason et une bande DEL, avec envoi sur broker par MQTT
-//Le capteur reçoit une valeur de distance et dépendemment de si elle déscend en dessous de 15 cm, envoyer une donnée par MQTT et allumer la DEL en rouge
+//Le microcontrôleur se connecte au réseau WIFI, puis au broker MQTT
+//Le capteur reçoit une valeur de distance et dépendemment de si elle déscend en dessous de 15 cm, le microcontrôleur envoit un "1" par MQTT sur le topic et allume la bande DEL en rouge
 #include <ArduinoMqttClient.h>
 #include <WiFiNINA.h>
 #include <Adafruit_NeoPixel.h>
